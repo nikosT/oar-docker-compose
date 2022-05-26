@@ -109,8 +109,118 @@ if [ ! -f /oar_provisioned ]; then
         systemctl enable oar-server
         systemctl start oar-server
 
-        oarnodesetting -a -h node1
-        oarnodesetting -a -h node2
+        #source /etc/systemd/system/create_resources.sh
+        #create_resources_manually
+
+        oarproperty -a cpu || true
+        oarproperty -a core || true
+        oarproperty -c -a host || true
+        oarproperty -a mem || true
+
+        oarnodesetting -a -h 'node1' -p host='node1' -p cpu=1 -p core=1 -p cpuset=0 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node1' -p host='node1' -p cpu=1 -p core=2 -p cpuset=1 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node1' -p host='node1' -p cpu=1 -p core=3 -p cpuset=2 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node1' -p host='node1' -p cpu=1 -p core=4 -p cpuset=3 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node1' -p host='node1' -p cpu=1 -p core=5 -p cpuset=4 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node1' -p host='node1' -p cpu=1 -p core=6 -p cpuset=5 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node1' -p host='node1' -p cpu=1 -p core=7 -p cpuset=6 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node1' -p host='node1' -p cpu=1 -p core=8 -p cpuset=7 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node1' -p host='node1' -p cpu=1 -p core=9 -p cpuset=8 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node1' -p host='node1' -p cpu=1 -p core=10 -p cpuset=9 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node1' -p host='node1' -p cpu=1 -p core=11 -p cpuset=10 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node1' -p host='node1' -p cpu=1 -p core=12 -p cpuset=11 -p mem=16 &
+        wait
+
+        oarnodesetting -a -h 'node2' -p host='node2' -p cpu=1 -p core=1 -p cpuset=0 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node2' -p host='node2' -p cpu=1 -p core=2 -p cpuset=1 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node2' -p host='node2' -p cpu=1 -p core=3 -p cpuset=2 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node2' -p host='node2' -p cpu=1 -p core=4 -p cpuset=3 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node2' -p host='node2' -p cpu=1 -p core=5 -p cpuset=4 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node2' -p host='node2' -p cpu=1 -p core=6 -p cpuset=5 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node2' -p host='node2' -p cpu=1 -p core=7 -p cpuset=6 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node2' -p host='node2' -p cpu=1 -p core=8 -p cpuset=7 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node2' -p host='node2' -p cpu=1 -p core=9 -p cpuset=8 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node2' -p host='node2' -p cpu=1 -p core=10 -p cpuset=9 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node2' -p host='node2' -p cpu=1 -p core=11 -p cpuset=10 -p mem=16 &
+        wait
+        oarnodesetting -a -h 'node2' -p host='node2' -p cpu=1 -p core=12 -p cpuset=11 -p mem=16 &
+        wait
+
+
+oarnodesetting -r 1 -p "core=1" -p "cpuset=0" &
+wait
+oarnodesetting -r 2 -p "core=2" -p "cpuset=1" &
+wait
+oarnodesetting -r 3 -p "core=3" -p "cpuset=2" &
+wait
+oarnodesetting -r 4 -p "core=4" -p "cpuset=3" &
+wait
+oarnodesetting -r 5 -p "core=5" -p "cpuset=4" &
+wait
+oarnodesetting -r 6 -p "core=6" -p "cpuset=5" &
+wait
+oarnodesetting -r 7 -p "core=7" -p "cpuset=6" &
+wait
+oarnodesetting -r 8 -p "core=8" -p "cpuset=7" &
+wait
+oarnodesetting -r 9 -p "core=9" -p "cpuset=8" &
+wait
+oarnodesetting -r 10 -p "core=10" -p "cpuset=9" &
+wait
+oarnodesetting -r 11 -p "core=11" -p "cpuset=10" &
+wait
+oarnodesetting -r 12 -p "core=12" -p "cpuset=11" &
+wait
+
+oarnodesetting -r 13 -p "core=1" -p "cpuset=0" &
+wait
+oarnodesetting -r 14 -p "core=2" -p "cpuset=1" &
+wait
+oarnodesetting -r 15 -p "core=3" -p "cpuset=2" &
+wait
+oarnodesetting -r 16 -p "core=4" -p "cpuset=3" &
+wait
+oarnodesetting -r 17 -p "core=5" -p "cpuset=4" &
+wait
+oarnodesetting -r 18 -p "core=6" -p "cpuset=5" &
+wait
+oarnodesetting -r 19 -p "core=7" -p "cpuset=6" &
+wait
+oarnodesetting -r 20 -p "core=8" -p "cpuset=7" &
+wait
+oarnodesetting -r 21 -p "core=9" -p "cpuset=8" &
+wait
+oarnodesetting -r 22 -p "core=10" -p "cpuset=9" &
+wait
+oarnodesetting -r 23 -p "core=11" -p "cpuset=10" &
+wait
+oarnodesetting -r 24 -p "core=12" -p "cpuset=11" &
+wait
+
+
+        #oarnodesetting -a -h node1
+        #oarnodesetting -a -h node2
     elif [ "$role" == "node" ] || [[ $FRONTEND_OAREXEC = true && "$role" == "frontend" ]];
     then
         echo "Provision OAR Node for $role"
