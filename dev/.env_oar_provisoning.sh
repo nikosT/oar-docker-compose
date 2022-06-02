@@ -1,5 +1,5 @@
 #AUTO_PROVISIONING=1
-SRC=""
+SRC="oar3-mod"
 # Enable the frontend to act as a node.
 # In case of job deploy, the oarexec can be executed on the frontend.
 FRONTEND_OAREXEC=false

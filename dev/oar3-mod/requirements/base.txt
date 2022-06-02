@@ -1,0 +1,17 @@
+SQLAlchemy-Utils
+SQLAlchemy
+alembic
+Flask>=0.10
+fastapi
+tabulate
+Click
+pyzmq
+requests
+procset
+simplejson
+psutil
+passlib
+pyyaml
+escapism
+toml
+
