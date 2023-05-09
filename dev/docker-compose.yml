@@ -12,6 +12,7 @@ services:
     volumes:
       - .:/srv
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - ./oar3/etc/oar/admission_rules.d:/etc/oar/admission_rules.d
     networks:
       - oar
 
@@ -32,6 +33,7 @@ services:
     volumes:
       - .:/srv
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - ./oar3/etc/oar/admission_rules.d:/etc/oar/admission_rules.d
     networks:
       - oar
 
@@ -47,6 +49,7 @@ services:
     volumes:
       - .:/srv
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - ./oar3/etc/oar/admission_rules.d:/etc/oar/admission_rules.d
     networks:
       - oar
 
